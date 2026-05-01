@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Orçamento - Serraria PinusVale</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="logo">Serraria <span>PinusVale</span></div>
+
+  <nav>
+    <a href="index.html">Início</a>
+    <a href="produtos.html">Produtos</a>
+    <a href="orcamento.html">Orçamento</a>
+    <a href="#">Carrinho</a>
+  </nav>
+</header>
+
+<main>
+  <section>
+    <h1 class="titulo">Solicite seu orçamento</h1>
+    <p class="subtitulo">Preencha os dados abaixo e nossa equipe entrará em contato</p>
+
+    <form class="formulario">
+      <label for="nome">Nome completo</label>
+      <input type="text" id="nome" placeholder="Digite seu nome" required>
+
+      <label for="telefone">Telefone / WhatsApp</label>
+      <input type="tel" id="telefone" placeholder="(00) 00000-0000" required>
+
+      <label for="email">E-mail</label>
+      <input type="email" id="email" placeholder="seuemail@email.com">
+
+      <label for="produto">Produto desejado</label>
+      <select id="produto" required>
+        <option value="">Selecione um produto</option>
+        <option value="pinus">Pinus</option>
+        <option value="pallets">Pallets</option>
+        <option value="cavaco">Cavaco</option>
+      </select>
+
+      <label for="quantidade">Quantidade aproximada</label>
+      <input type="text" id="quantidade" placeholder="Ex: 50 unidades, 10m³, 2 toneladas">
+
+      <label for="cidade">Cidade</label>
+      <input type="text" id="cidade" placeholder="Digite sua cidade">
+
+      <label for="mensagem">Observações</label>
+      <textarea id="mensagem" rows="5" placeholder="Descreva detalhes do pedido"></textarea>
+
+      <button type="submit">Enviar orçamento</button>
+    </form>
+  </section>
+</main>
+
+<footer>
+  <p>&copy; 2026 Serraria PinusVale - Atendimento rápido para orçamentos.</p>
+</footer>
+
+</body>
+</html>
