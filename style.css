@@ -63,11 +63,7 @@ nav a:hover {
   justify-content: space-between;
   align-items: center;
   gap: 50px;
-  background: linear-gradient(
-    135deg,
-    #302d29,
-    #665d51
-  );
+  background: linear-gradient(135deg, var(--areia), var(--cinza-claro));
 }
 
 .hero-texto {
@@ -76,7 +72,7 @@ nav a:hover {
 
 .hero-texto h1 {
   font-size: 50px;
-  color: beige;
+  color: var(--verde-profundo);
   margin-bottom: 20px;
 }
 
@@ -84,7 +80,6 @@ nav a:hover {
   font-size: 18px;
   line-height: 1.7;
   margin-bottom: 30px;
-  color:#c9b99e
 }
 
 .botoes {
@@ -341,4 +336,30 @@ footer {
   section {
     padding: 55px 6%;
   }
+}
+.login-topo {
+  position: absolute;
+  right: 40px;
+  top: 20px;
+
+  background-color: #8B5A2B;
+  color: #fff;
+
+  padding: 10px 22px;
+  border-radius: 8px;
+
+  font-weight: bold;
+  text-decoration: none;
+
+  transition: 0.2s;
+}
+
+.login-topo:hover {
+  background-color: #D6A15D;
+  color: #1F3A27;
+  transform: scale(1.05);
+}
+
+header {
+  position: relative;
 }
