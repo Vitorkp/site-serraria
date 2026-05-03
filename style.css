@@ -293,6 +293,130 @@ section:nth-child(odd) {
   background-color: var(--marrom);
 }
 
+.carrinho-section {
+  min-height: 75vh;
+}
+
+.carrinho-container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.lista-carrinho {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.item-carrinho {
+  background-color: var(--creme);
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 20px;
+  border-radius: 14px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+}
+
+.item-carrinho img {
+  width: 150px;
+  height: 110px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.info-item {
+  flex: 1;
+  text-align: left;
+}
+
+.info-item h3 {
+  color: var(--verde);
+  margin-bottom: 8px;
+}
+
+.info-item p {
+  margin-bottom: 12px;
+}
+
+.info-item input {
+  width: 80px;
+  padding: 8px;
+  border: 1px solid #c9b99e;
+  border-radius: 6px;
+}
+
+.btn-remover {
+  background-color: #8B2E2E;
+  color: white;
+  border: none;
+  padding: 10px 14px;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.resumo-carrinho {
+  background-color: var(--creme);
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.12);
+  height: fit-content;
+  text-align: left;
+}
+
+.resumo-carrinho h2 {
+  color: var(--verde);
+  margin-bottom: 18px;
+}
+
+.resumo-carrinho p {
+  margin-bottom: 12px;
+}
+
+.btn-finalizar,
+.btn-continuar {
+  display: block;
+  text-align: center;
+  text-decoration: none;
+  padding: 13px;
+  border-radius: 8px;
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.btn-finalizar {
+  background-color: var(--verde);
+  color: white;
+}
+
+.btn-continuar {
+  background-color: var(--marrom);
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .carrinho-container {
+    grid-template-columns: 1fr;
+  }
+
+  .item-carrinho {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .info-item {
+    text-align: center;
+  }
+
+  .item-carrinho img {
+    width: 100%;
+    height: 180px;
+  }
+}
+
 footer {
   background: linear-gradient(135deg, var(--verde-profundo), var(--verde));
   color: var(--creme);
@@ -358,8 +482,4 @@ footer {
   background-color: #D6A15D;
   color: #1F3A27;
   transform: scale(1.05);
-}
-
-header {
-  position: relative;
 }
