@@ -21,7 +21,6 @@ O sistema permitirá que clientes visualizem produtos, adicionem ao carrinho e s
 - Página inicial (Home)
 - Página de produtos
 - Página de orçamento
-- Página de carrinho
 - Navegação entre páginas
 - Layout responsivo
 - Design com identidade visual (verde e madeira)
