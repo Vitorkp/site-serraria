@@ -1,0 +1,101 @@
+# 🌲 Site Florestal Pinus
+
+Projeto de desenvolvimento de um site institucional e funcional para uma serraria, com foco em solicitação de produtos e orçamentos.
+
+---
+
+## 📌 Sobre o projeto
+
+Este projeto tem como objetivo criar um site para uma empresa de serraria que trabalha com:
+
+- Madeira de Pinus
+- Pallets
+- Cavaco
+
+O sistema permitirá que clientes visualizem produtos, adicionem ao carrinho e solicitem orçamento.
+
+---
+
+## 🚀 Funcionalidades atuais
+
+- Página inicial (Home)
+- Página de produtos
+- Página de orçamento
+- Navegação entre páginas
+- Layout responsivo
+- Design com identidade visual (verde e madeira)
+
+---
+
+## 🔐 Funcionalidades em desenvolvimento
+
+- Sistema de login de usuários
+- Integração com backend (PHP + MySQL)
+- Proteção de páginas (orçamento)
+- Salvamento de dados no banco
+- Sistema de logout
+
+---
+
+## 🛠️ Tecnologias utilizadas
+
+- HTML5
+- CSS3
+- JavaScript
+- Git e GitHub
+- PHP
+- MySQL
+---
+
+## ⚙️ Futuras tecnologias (backend)
+
+- Sessões (login de usuário)
+
+
+---
+
+## 👥 Equipe
+
+Projeto desenvolvido por:
+
+- equipe( Frontend )
+
+- equipe ( Backend )
+---
+
+
+## 📈 Status do projeto
+
+🚧 Em desenvolvimento
+
+---
+
+## 📎 Objetivo final
+
+Criar um sistema completo para empresa, permitindo:
+
+- Cadastro e login de usuários
+- Solicitação de orçamento
+- Controle de pedidos
+- Integração com banco de dados
+
+---
+
+## Fotos do Site em Desenvolvimento
+
+-página inicial ( Header )
+<img width="1890" height="913" alt="image" src="https://github.com/user-attachments/assets/f0d73202-e10b-4e5d-9063-6c4d1c28b97b" />
+
+página inicial ( Footer )
+<img width="1892" height="911" alt="image" src="https://github.com/user-attachments/assets/0514990b-4990-4c1a-8f08-7f15ad7e4331" />
+
+página de orçamento
+<img width="1238" height="912" alt="image" src="https://github.com/user-attachments/assets/a0ec0035-bf77-4776-aec7-d839b1d34a33" />
+
+
+
+---
+
+## 💡 Observação
+
+Este projeto está sendo desenvolvido para uma aplicação real para uma empresa.
