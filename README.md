@@ -1,4 +1,4 @@
-# 🌲 Site Serraria PinusVale
+# 🌲 Site Florestal Pinus
 
 Projeto de desenvolvimento de um site institucional e funcional para uma serraria, com foco em solicitação de produtos e orçamentos.
 
