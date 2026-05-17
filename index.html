@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Florestal Pinus</title>
+  <title data-i18n="meta.titulo">Florestal Pinus</title>
   <link rel="icon" type="image/png" href="logo-florestal.png">
   <link rel="stylesheet" href="style.css">
 </head>
@@ -13,150 +13,303 @@
   <div class="logo">Florestal <span>Pinus</span></div>
 
   <nav>
-    <a href="index.html">Início</a>
-    <a href="sobre.html">Sobre a Empresa</a>
-    <a href="internacional.html">internacional</a>
-    <a href="produtos.html">Produtos</a>
-    <a href="orcamento.html">Orçamento</a>
+    <a href="index.html" data-i18n="nav.inicio">Home</a>
+
+    <a href="sobre.html" data-i18n="nav.sobre">
+      About Us
+    </a>
+
+    <a href="internacional.html" data-i18n="nav.internacional">
+      International
+    </a>
+
+    <a href="produtos.html" data-i18n="nav.produtos">
+      Products
+    </a>
+
+    <a href="orcamento.html" data-i18n="nav.orcamento">
+      Quote
+    </a>
   </nav>
 
-
-  <a href="login.html" class="login-topo">Login</a>
+  <a href="login.html" class="login-topo" data-i18n="nav.login">
+    Login
+  </a>
 </header>
 
 <main>
+
   <section class="hero">
+
     <div class="hero-texto">
-      <h1>Madeira de qualidade para construção, indústria e transporte</h1>
-      <p>
-        Fornecemos pinus, pallets e cavaco com qualidade, entrega regional
-        e atendimento rápido para empresas, obras e indústrias.
+
+      <h1 data-i18n="hero.titulo">
+        Quality wood for construction, industry and transportation
+      </h1>
+
+      <p data-i18n="hero.descricao">
+        We supply pine wood, pallets and wood chips with quality, regional delivery
+        and fast service for companies, construction sites and industries.
       </p>
 
       <div class="botoes">
-        <a href="produtos.html" class="btn btn-verde">Ver produtos</a>
-        <a href="orcamento.html" class="btn btn-marrom">Solicitar orçamento</a>
+
+        <a href="produtos.html" class="btn btn-verde" data-i18n="hero.botaoProdutos">
+          View products
+        </a>
+
+        <a href="orcamento.html" class="btn btn-marrom" data-i18n="hero.botaoOrcamento">
+          Request a quote
+        </a>
+
       </div>
+
     </div>
 
     <div class="hero-card">
-      <h2>Produtos principais</h2>
+
+      <h2 data-i18n="heroCard.titulo">
+        Main products
+      </h2>
+
       <ul>
-        <li>Pinus bruto, tratado e sob medida</li>
-        <li>Pallets novos, reforçados e personalizados</li>
-        <li>Cavaco para biomassa e uso industrial</li>
+
+        <li data-i18n="heroCard.item1">
+          Raw, treated and custom pine wood
+        </li>
+
+        <li data-i18n="heroCard.item2">
+          New, reinforced and customized pallets
+        </li>
+
+        <li data-i18n="heroCard.item3">
+          Wood chips for biomass and industrial use
+        </li>
+
       </ul>
+
     </div>
+
   </section>
 
   <section>
-    <h2 class="titulo">Nossos Produtos</h2>
-    <p class="subtitulo">Soluções em madeira para diferentes necessidades</p>
+
+    <h2 class="titulo" data-i18n="produtos.titulo">
+      Our Products
+    </h2>
+
+    <p class="subtitulo" data-i18n="produtos.subtitulo">
+      Wood solutions for different needs
+    </p>
 
     <div class="cards">
+
       <div class="card">
+
         <div class="icone">🌲</div>
-        <h3>Pinus</h3>
-        <p>Madeira resistente para construção, marcenaria e uso industrial.</p>
-        <a href="produtos.html">Ver mais</a>
+
+        <h3 data-i18n="produtos.pinus.titulo">
+          Pine Wood
+        </h3>
+
+        <p data-i18n="produtos.pinus.descricao">
+          Durable wood for construction, carpentry and industrial use.
+        </p>
+
+        <a href="produtos.html" data-i18n="produtos.verMais">
+          View more
+        </a>
+
       </div>
 
       <div class="card">
+
         <div class="icone">📦</div>
-        <h3>Pallets</h3>
-        <p>Pallets para transporte, armazenamento e logística empresarial.</p>
-        <a href="produtos.html">Ver mais</a>
+
+        <h3 data-i18n="produtos.pallets.titulo">
+          Pallets
+        </h3>
+
+        <p data-i18n="produtos.pallets.descricao">
+          Pallets for transportation, storage and business logistics.
+        </p>
+
+        <a href="produtos.html" data-i18n="produtos.verMais">
+          View more
+        </a>
+
       </div>
 
       <div class="card">
+
         <div class="icone">🪵</div>
-        <h3>Cavaco</h3>
-        <p>Cavaco de madeira para biomassa, granjas, caldeiras e indústrias.</p>
-        <a href="produtos.html">Ver mais</a>
+
+        <h3 data-i18n="produtos.cavaco.titulo">
+          Wood Chips
+        </h3>
+
+        <p data-i18n="produtos.cavaco.descricao">
+          Wood chips for biomass, farms, boilers and industries.
+        </p>
+
+        <a href="produtos.html" data-i18n="produtos.verMais">
+          View more
+        </a>
+
       </div>
+
     </div>
+
   </section>
 
   <section class="vantagens">
-    <h2 class="titulo">Por que escolher nossa serraria?</h2>
+
+    <h2 class="titulo" data-i18n="vantagens.titulo">
+      Why choose our sawmill?
+    </h2>
 
     <div class="vantagens-container">
+
       <div class="vantagem">
-        <h3>Qualidade</h3>
-        <p>Produtos selecionados e preparados com cuidado.</p>
+
+        <h3 data-i18n="vantagens.qualidade.titulo">
+          Quality
+        </h3>
+
+        <p data-i18n="vantagens.qualidade.descricao">
+          Carefully selected and prepared products.
+        </p>
+
       </div>
 
       <div class="vantagem">
-        <h3>Agilidade</h3>
-        <p>Atendimento rápido para pedidos e orçamentos.</p>
+
+        <h3 data-i18n="vantagens.agilidade.titulo">
+          Agility
+        </h3>
+
+        <p data-i18n="vantagens.agilidade.descricao">
+          Fast service for orders and quotations.
+        </p>
+
       </div>
 
       <div class="vantagem">
-        <h3>Sob medida</h3>
-        <p>Soluções personalizadas para cada tipo de cliente.</p>
+
+        <h3 data-i18n="vantagens.personalizado.titulo">
+          Custom Solutions
+        </h3>
+
+        <p data-i18n="vantagens.personalizado.descricao">
+          Personalized solutions for every type of client.
+        </p>
+
       </div>
+
     </div>
+
   </section>
+
   <section class="sobre-home reveal">
-  <div class="sobre-home-conteudo">
 
-    <div class="sobre-home-texto">
-      <span class="sobre-tag">Sobre a empresa</span>
+    <div class="sobre-home-conteudo">
 
-      <h2>Indústria de Pinus com experiência no mercado internacional</h2>
+      <div class="sobre-home-texto">
 
-      <p>
-        Fundada em 1995 e localizada em São José do Norte - RS, a Serraria PinusVale
-        atua na produção industrial de madeira de pinus, atendendo tanto o mercado
-        interno quanto clientes internacionais.
-      </p>
+        <span class="sobre-tag" data-i18n="sobre.tag">
+          About the company
+        </span>
 
-      <p>
-        Com foco em produtividade, qualidade e logística, a empresa trabalha com
-        produção contínua, transformando a madeira desde a chegada da matéria-prima
-        até o produto final pronto para secagem, empacotamento e envio.
-      </p>
+        <h2 data-i18n="sobre.titulo">
+          Pine industry with experience in the international market
+        </h2>
 
-      <div class="sobre-destaques">
-        <span>🌎 Exportação internacional</span>
-        <span>🏭 Produção contínua</span>
-        <span>🌱 Aproveitamento da madeira</span>
+        <p data-i18n="sobre.descricao1">
+          Founded in 1995 and located in São José do Norte - RS, Serraria PinusVale
+          operates in the industrial production of pine wood, serving both domestic
+          and international markets.
+        </p>
+
+        <p data-i18n="sobre.descricao2">
+          Focused on productivity, quality and logistics, the company works with
+          continuous production, transforming wood from raw material arrival
+          to the final product ready for drying, packaging and shipping.
+        </p>
+
+        <div class="sobre-destaques">
+
+          <span data-i18n="sobre.destaque1">
+            🌎 International export
+          </span>
+
+          <span data-i18n="sobre.destaque2">
+            🏭 Continuous production
+          </span>
+
+          <span data-i18n="sobre.destaque3">
+            🌱 Wood utilization
+          </span>
+
+        </div>
+
+        <a href="sobre.html" class="btn-sobre" data-i18n="sobre.botao">
+          Learn more about the company
+        </a>
+
       </div>
 
-      <a href="sobre.html" class="btn-sobre">Conhecer a empresa</a>
+      <div class="sobre-home-card">
+
+        <h3 data-i18n="numeros.titulo">
+          Florestal Pinus in numbers
+        </h3>
+
+        <div class="numero-linha">
+          <strong>1995</strong>
+
+          <p data-i18n="numeros.fundacao">
+            foundation year
+          </p>
+        </div>
+
+        <div class="numero-linha">
+          <strong>60+</strong>
+
+          <p data-i18n="numeros.containers">
+            containers produced per month
+          </p>
+        </div>
+
+        <div class="numero-linha">
+          <strong>3</strong>
+
+          <p data-i18n="numeros.mercados">
+            main international markets
+          </p>
+        </div>
+
+        <div class="numero-linha">
+          <strong>60-120</strong>
+
+          <p data-i18n="numeros.pedidos">
+            days for order scheduling
+          </p>
+        </div>
+
+      </div>
+
     </div>
 
-    <div class="sobre-home-card">
-      <h3>Florestal Pinus em números</h3>
+  </section>
 
-      <div class="numero-linha">
-        <strong>1995</strong>
-        <p>ano de fundação</p>
-      </div>
-
-      <div class="numero-linha">
-        <strong>60+</strong>
-        <p>containers produzidos por mês</p>
-      </div>
-
-      <div class="numero-linha">
-        <strong>3</strong>
-        <p>principais mercados internacionais</p>
-      </div>
-
-      <div class="numero-linha">
-        <strong>60-120</strong>
-        <p>dias de programação de pedidos</p>
-      </div>
-    </div>
-
-  </div>
-</section>
 </main>
 
 <footer>
-  <p>&copy; 2026 Florestal Pinus - Madeira de qualidade do corte ao transporte.</p>
+  <p data-i18n="footer.texto">
+    &copy; 2026 Florestal Pinus - Quality wood from cutting to transportation.
+  </p>
 </footer>
+
 <script src="script.js"></script>
 </body>
 </html>

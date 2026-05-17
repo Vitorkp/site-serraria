@@ -1,68 +1,175 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Orçamento - Florestal Pinus</title>
+
+  <title data-i18n="orcamento.metaTitulo">
+    Quote - Florestal Pinus
+  </title>
+
   <link rel="icon" type="image/png" href="logo-florestal.png">
   <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
 <header>
-  <div class="logo">Florestal <span>Pinus</span></div>
+
+  <div class="logo">
+    Florestal <span>Pinus</span>
+  </div>
 
   <nav>
-    <a href="index.html">Início</a>
-    <a href="sobre.html">Sobre a Empresa</a>
-    <a href="internacional.html">internacional</a>
-    <a href="produtos.html">Produtos</a>
+
+    <a href="index.html" data-i18n="nav.inicio">
+      Home
+    </a>
+
+    <a href="sobre.html" data-i18n="nav.sobre">
+      About Us
+    </a>
+
+    <a href="internacional.html" data-i18n="nav.internacional">
+      International
+    </a>
+
+    <a href="produtos.html" data-i18n="nav.produtos">
+      Products
+    </a>
+
   </nav>
 
-  <a href="login.html" class="login-topo">Login</a>
+  <a href="login.html" class="login-topo" data-i18n="nav.login">
+    Login
+  </a>
+
 </header>
 
 <main>
-  
+
   <section>
-    <h1 class="titulo">Solicite seu orçamento</h1>
-    <p class="subtitulo">Preencha os dados abaixo e nossa equipe entrará em contato</p>
+
+    <h1 class="titulo" data-i18n="orcamento.titulo">
+      Request your quote
+    </h1>
+
+    <p class="subtitulo" data-i18n="orcamento.subtitulo">
+      Fill in the information below and our team will contact you
+    </p>
 
     <form class="formulario">
-      <label for="nome">Nome completo</label>
-      <input type="text" id="nome" placeholder="Digite seu nome" required>
 
-      <label for="telefone">Telefone / WhatsApp</label>
-      <input type="tel" id="telefone" placeholder="(00) 00000-0000" required>
+      <label for="nome" data-i18n="orcamento.nomeLabel">
+        Full name
+      </label>
 
-      <label for="email">E-mail</label>
-      <input type="email" id="email" placeholder="seuemail@email.com">
+      <input
+        type="text"
+        id="nome"
+        data-i18n-placeholder="orcamento.nomePlaceholder"
+        placeholder="Enter your name"
+        required
+      >
 
-      <label for="produto">Produto desejado</label>
+      <label for="telefone" data-i18n="orcamento.telefoneLabel">
+        Phone / WhatsApp
+      </label>
+
+      <input
+        type="tel"
+        id="telefone"
+        placeholder="(00) 00000-0000"
+        required
+      >
+
+      <label for="email" data-i18n="orcamento.emailLabel">
+        E-mail
+      </label>
+
+      <input
+        type="email"
+        id="email"
+        data-i18n-placeholder="orcamento.emailPlaceholder"
+        placeholder="your@email.com"
+      >
+
+      <label for="produto" data-i18n="orcamento.produtoLabel">
+        Desired product
+      </label>
+
       <select id="produto" required>
-        <option value="">Selecione um produto</option>
-        <option value="pinus">Pinus</option>
-        <option value="pallets">Pallets</option>
-        <option value="cavaco">Cavaco</option>
+
+        <option value="" data-i18n="orcamento.produtoSelecionar">
+          Select a product
+        </option>
+
+        <option value="pinus" data-i18n="orcamento.produtoPinus">
+          Pine Wood
+        </option>
+
+        <option value="pallets" data-i18n="orcamento.produtoPallets">
+          Pallets
+        </option>
+
+        <option value="cavaco" data-i18n="orcamento.produtoCavaco">
+          Wood Chips
+        </option>
+
       </select>
 
-      <label for="quantidade">Quantidade aproximada</label>
-      <input type="text" id="quantidade" placeholder="Ex: 50 unidades, 10m³, 2 toneladas">
+      <label for="quantidade" data-i18n="orcamento.quantidadeLabel">
+        Approximate quantity
+      </label>
 
-      <label for="cidade">Cidade</label>
-      <input type="text" id="cidade" placeholder="Digite sua cidade">
+      <input
+        type="text"
+        id="quantidade"
+        data-i18n-placeholder="orcamento.quantidadePlaceholder"
+        placeholder="Example: 50 units, 10m³, 2 tons"
+      >
 
-      <label for="mensagem">Observações</label>
-      <textarea id="mensagem" rows="5" placeholder="Descreva detalhes do pedido"></textarea>
+      <label for="cidade" data-i18n="orcamento.cidadeLabel">
+        City
+      </label>
 
-      <button type="submit">Enviar orçamento</button>
+      <input
+        type="text"
+        id="cidade"
+        data-i18n-placeholder="orcamento.cidadePlaceholder"
+        placeholder="Enter your city"
+      >
+
+      <label for="mensagem" data-i18n="orcamento.observacoesLabel">
+        Notes
+      </label>
+
+      <textarea
+        id="mensagem"
+        rows="5"
+        data-i18n-placeholder="orcamento.observacoesPlaceholder"
+        placeholder="Describe your request details"
+      ></textarea>
+
+      <button type="submit" data-i18n="orcamento.botaoEnviar">
+        Send quote request
+      </button>
+
     </form>
+
   </section>
+
 </main>
 
 <footer>
-  <p>&copy; 2026 Serraria PinusVale - Atendimento rápido para orçamentos.</p>
+
+  <p data-i18n="footer.texto">
+    &copy; 2026 Florestal Pinus - Fast service for quotations.
+  </p>
+
 </footer>
+
 <script src="script.js"></script>
+
 </body>
 </html>
