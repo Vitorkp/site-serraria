@@ -48,3 +48,32 @@ function atualizarMoeda() {
     moeda.value = "USD";
   }
 }
+
+function mudarIdioma(idioma) {
+  console.log("Idioma alterado para: " + idioma);
+  
+  const botoes = document.querySelectorAll('.lang-btn');
+  botoes.forEach(btn => {
+    if (btn.getAttribute('onclick').includes(idioma)) {
+      btn.classList.remove('inativo');
+    } else {
+      btn.classList.add('inativo');
+    }
+  });
+
+}
+
+function alternarSwitch(checkbox) {
+  const ptLabel = document.querySelector('.pt-label');
+  const enLabel = document.querySelector('.en-label');
+
+  if (checkbox.checked) {
+    ptLabel.classList.remove('ativo');
+    enLabel.classList.add('ativo');
+    if (typeof mudarIdioma === "function") mudarIdioma('en');
+  } else {
+    enLabel.classList.remove('ativo');
+    ptLabel.classList.add('ativo');
+    if (typeof mudarIdioma === "function") mudarIdioma('pt');
+  }
+}
