@@ -26,9 +26,39 @@
     <a href="produtos.html" data-i18n="nav.produtos">Products</a>
   </nav>
 
+<div class="header-actions">
+
   <a href="login.html" class="login-topo" data-i18n="nav.login">
     Login
   </a>
+
+  <div class="toggle-container">
+
+    <span class="toggle-label pt-label ativo">
+      PT
+    </span>
+
+    <label class="switch">
+
+      <input
+        type="checkbox"
+        id="lang-checkbox"
+        onchange="alternarSwitch(this)"
+      >
+
+      <div class="slider">
+        <div class="knob"></div>
+      </div>
+
+    </label>
+
+    <span class="toggle-label en-label">
+      EN
+    </span>
+
+  </div>
+
+</div>
 
 </header>
 
