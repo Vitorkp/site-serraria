@@ -8,9 +8,10 @@ Projeto de desenvolvimento de um site institucional e funcional para uma serrari
 
 Este projeto tem como objetivo criar um site para uma empresa de serraria que trabalha com:
 
-- Madeira de Pinus
-- Pallets
+- Casca de Pinus
+- Pellets
 - Cavaco
+- Serragem
 
 O sistema permitirá que clientes visualizem produtos, adicionem ao carrinho e solicitem orçamento.
 
@@ -29,11 +30,10 @@ O sistema permitirá que clientes visualizem produtos, adicionem ao carrinho e s
 
 ## 🔐 Funcionalidades em desenvolvimento
 
-- Sistema de login de usuários
 - Integração com backend (PHP + MySQL)
 - Proteção de páginas (orçamento)
 - Salvamento de dados no banco
-- Sistema de logout
+- Página admin
 
 ---
 
@@ -48,9 +48,6 @@ O sistema permitirá que clientes visualizem produtos, adicionem ao carrinho e s
 ---
 
 ## ⚙️ Futuras tecnologias (backend)
-
-- Sessões (login de usuário)
-
 
 ---
 
@@ -74,10 +71,10 @@ Projeto desenvolvido por:
 
 Criar um sistema completo para empresa, permitindo:
 
-- Cadastro e login de usuários
 - Solicitação de orçamento
 - Controle de pedidos
 - Integração com banco de dados
+- identidade visual
 
 ---
 
