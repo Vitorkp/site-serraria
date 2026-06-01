@@ -82,13 +82,13 @@ const traducoes = {
 
     "vantagens.titulo": "Por que escolher nossa serraria?",
 
-    "vantagens.qualidade.titulo": "Qualidade",
+    "vantagens.qualidade.titulo": "Recursos Renováveis",
     "vantagens.qualidade.descricao":
-      "Produtos selecionados e preparados com cuidado.",
+      "Comprometidos com florestas renováveis ​​​que protegem os recursos naturais",
 
     "vantagens.agilidade.titulo": "Agilidade",
     "vantagens.agilidade.descricao":
-      "Atendimento rápido para pedidos e orçamentos.",
+      "Produção eficiente e atendimento ágil para cumprir seus prazos.",
 
     "vantagens.personalizado.titulo": "Soluções personalizadas",
     "vantagens.personalizado.descricao":
@@ -222,13 +222,13 @@ const traducoes = {
 
     "vantagens.titulo": "Why choose our sawmill?",
 
-    "vantagens.qualidade.titulo": "Quality",
+    "vantagens.qualidade.titulo": "Renewable Resources",
     "vantagens.qualidade.descricao":
-      "Carefully selected and prepared products.",
+      "Committed to renewable forests that protect natural resources..",
 
     "vantagens.agilidade.titulo": "Agility",
     "vantagens.agilidade.descricao":
-      "Fast service for orders and quotations.",
+      "Efficient production and responsive service to meet your deadlines.",
 
     "vantagens.personalizado.titulo": "Custom Solutions",
     "vantagens.personalizado.descricao":
