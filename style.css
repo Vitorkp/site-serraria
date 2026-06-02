@@ -1258,3 +1258,45 @@ footer {
   width: 35px;
   height: 35px;
 }
+.sobre-grid{
+    display:grid;
+    grid-template-columns:1.2fr 1fr;
+    gap:50px;
+    align-items:center;
+}
+
+.sobre-imagem img{
+    width:100%;
+    max-height:350px;
+    object-fit:cover;
+    border-radius:20px;
+    box-shadow:0 15px 35px rgba(0,0,0,.2);
+}
+
+.sobre-texto h2{
+    color:#fff;
+    font-size:3rem;
+    margin-bottom:20px;
+}
+
+.sobre-texto p{
+    color:rgba(255,255,255,.9);
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+.sobre-destaques{
+    display:flex;
+    flex-wrap:wrap;
+    gap:15px;
+    margin-top:25px;
+}
+
+.sobre-destaques span{
+    background:rgba(255,255,255,.08);
+    border:1px solid rgba(255,255,255,.15);
+    color:white;
+    padding:12px 18px;
+    border-radius:12px;
+    font-weight:600;
+}

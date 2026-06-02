@@ -82,7 +82,7 @@ const traducoes = {
 
     "vantagens.titulo": "Por que escolher nossa serraria?",
 
-    "vantagens.qualidade.titulo": "Recursos Renováveis",
+    "vantagens.qualidade.titulo": "Florestas Renováveis",
     "vantagens.qualidade.descricao":
       "Comprometidos com florestas renováveis ​​​que protegem os recursos naturais",
 
@@ -97,19 +97,22 @@ const traducoes = {
     "sobre.tag": "Sobre a empresa",
 
     "sobre.titulo":
-      "Indústria de Pinus com experiência no mercado internacional",
+      "Produção Sustentável de Pinus para o Mercado Nacional e Internacional",
 
     "sobre.descricao1":
-      "Fundada em 1995 e localizada em São José do Norte - RS, a Florestal Pinus atua na produção industrial de madeira de pinus, atendendo tanto o mercado interno quanto clientes internacionais.",
+      "Desde 1995, a Florestal Pinus atua na produção e no processamento de produtos de madeira de pinus de alta qualidade, atendendo clientes do mercado nacional e internacional com eficiência, confiabilidade e excelência.",
 
     "sobre.descricao2":
-      "Com foco em produtividade, qualidade e logística, a empresa trabalha com produção contínua, transformando a madeira desde a chegada da matéria-prima até o produto final pronto para secagem, empacotamento e envio.",
+      "Nossas operações utilizam madeira proveniente de florestas renováveis, garantindo uma cadeia produtiva responsável que respeita os recursos naturais e promove a sustentabilidade ambiental a longo prazo.",
 
-    "sobre.destaque1": "🌎 Exportação internacional",
-    "sobre.destaque2": "🏭 Produção contínua",
-    "sobre.destaque3": "🌱 Aproveitamento da madeira",
+    "sobre.descricao3":
+      "Por meio de investimentos contínuos em produção, logística e aproveitamento de recursos, entregamos soluções que unem desempenho industrial e responsabilidade ambiental.",
 
-    "sobre.botao": "Conhecer a empresa",
+    "sobre.destaque1": "🌲 Florestas Renováveis",
+    "sobre.destaque2": "♻️ Produção Sustentável",
+    "sobre.destaque3": "🌍 Exportação Internacional",
+
+    "sobre.botao": "Conheça a empresa",
 
     "numeros.titulo": "Florestal Pinus em números",
     "numeros.fundacao": "ano de fundação",
@@ -222,7 +225,7 @@ const traducoes = {
 
     "vantagens.titulo": "Why choose our sawmill?",
 
-    "vantagens.qualidade.titulo": "Renewable Resources",
+    "vantagens.qualidade.titulo": "Renewable Forests",
     "vantagens.qualidade.descricao":
       "Committed to renewable forests that protect natural resources..",
 
@@ -234,24 +237,27 @@ const traducoes = {
     "vantagens.personalizado.descricao":
       "Personalized solutions for every type of client.",
 
-    "sobre.tag": "About the company",
+    "sobre.tag": "About the Company",
 
     "sobre.titulo":
-      "Pine industry with experience in the international market",
+      "Sustainable Pine Production for Domestic and International Markets",
 
     "sobre.descricao1":
-      "Founded in 1995 and located in São José do Norte - RS, Florestal Pinus operates in the industrial production of pine wood, serving both domestic and international markets.",
+      "Since 1995, Florestal Pinus has specialized in the production and processing of high-quality pine wood products, serving both domestic and international markets with reliability, efficiency, and consistent quality.",
 
     "sobre.descricao2":
-      "Focused on productivity, quality and logistics, the company works with continuous production, transforming wood from raw material arrival to the final product ready for drying, packaging and shipping.",
+      "Our operations are supported by timber sourced from renewable forests, ensuring a responsible supply chain that respects natural resources and promotes long-term environmental sustainability.",
 
-    "sobre.destaque1": "🌎 International export",
-    "sobre.destaque2": "🏭 Continuous production",
-    "sobre.destaque3": "🌱 Wood utilization",
+    "sobre.descricao3":
+      "Through continuous investment in production, logistics, and resource optimization, we deliver solutions that combine industrial performance with environmental responsibility.",
 
-    "sobre.botao": "Learn more about the company",
+    "sobre.destaque1": "🌲 Renewable Forests",
+    "sobre.destaque2": "♻️ Sustainable Production",
+    "sobre.destaque3": "🌍 International Export",
 
-    "numeros.titulo": "Florestal Pinus in numbers",
+    "sobre.botao": "Learn More About the Company",
+
+    "numeros.titulo": "Florestal Pinus sul Brasil in numbers",
     "numeros.fundacao": "foundation year",
     "numeros.containers": "containers produced per month",
     "numeros.mercados": "main international markets",
