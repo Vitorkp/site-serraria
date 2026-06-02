@@ -56,7 +56,7 @@ const traducoes = {
     "nav.orcamento": "Orçamento",
     "nav.login": "Conecte-se",
 
-    "hero.titulo": "Madeira de qualidade para construção, indústria e transporte",
+    "hero.titulo": "Madeira de qualidade para construção e indústria",
     "hero.descricao":
       "Fornecemos madeira de pinus, pallets e cavaco com qualidade, entrega regional e atendimento rápido para empresas, obras e indústrias.",
     "hero.botaoProdutos": "Ver produtos",
@@ -197,7 +197,7 @@ const traducoes = {
     "nav.login": "Login",
 
     "hero.titulo":
-      "Quality wood for construction, industry and transportation",
+      "Quality wood for construction and industry",
 
     "hero.descricao":
       "We supply pine wood, pallets and wood chips with quality, regional delivery and fast service for companies, construction sites and industries.",
