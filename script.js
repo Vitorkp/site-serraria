@@ -62,6 +62,14 @@ const traducoes = {
     "hero.botaoProdutos": "Ver produtos",
     "hero.botaoOrcamento": "Solicitar orçamento",
 
+    "heroCard.titulo": "Principais produtos",
+    "heroCard.item1":
+      "Madeira de pinus bruta, tratada e sob medida",
+    "heroCard.item2":
+      "Paletes novos, reforçados e personalizados",
+    "heroCard.item3":
+      "Cavaco para biomassa e uso industrial",
+
     "produtos.titulo": "Nossos Produtos",
     "produtos.subtitulo":
       "Soluções em madeira para diferentes necessidades",
@@ -204,6 +212,14 @@ const traducoes = {
 
     "hero.botaoProdutos": "View products",
     "hero.botaoOrcamento": "Request a quote",
+
+    "heroCard.titulo": "Main Products",
+    "heroCard.item1":
+      "Raw, treated and custom pine wood",
+    "heroCard.item2":
+      "New, reinforced and customized pallets",
+    "heroCard.item3":
+      "Wood chips for biomass and industrial use",
 
     "produtos.titulo": "Our Products",
     "produtos.subtitulo":
