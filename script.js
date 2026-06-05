@@ -1,7 +1,6 @@
 // Animação ao rolar
-const elementos = document.querySelectorAll(".reveal");
-
 function revelarElementos() {
+  const elementos = document.querySelectorAll(".reveal");
   elementos.forEach((el) => {
     const posicao = el.getBoundingClientRect().top;
     const alturaTela = window.innerHeight;
@@ -193,6 +192,10 @@ const traducoes = {
     "orcamento.observacoesLabel": "Observações",
     "orcamento.observacoesPlaceholder": "Descreva os detalhes do pedido",
     "orcamento.botaoEnviar": "Enviar solicitação de orçamento",
+    "orcamento.sucesso": "Sucesso!",
+    "orcamento.mensagemSucesso": "Orçamento enviado conforme a imagem. Nossa equipe entrará em contato em breve.",
+    "orcamento.erro": "Erro!",
+    "orcamento.mensagemErro": "Erro ao enviar o orçamento. Tente novamente.",
 
     "footer.texto": "© 2026 Florestal Pinus - Atendimento rápido para orçamentos."
   },
@@ -344,6 +347,10 @@ const traducoes = {
     "orcamento.observacoesLabel": "Notes",
     "orcamento.observacoesPlaceholder": "Describe your request details",
     "orcamento.botaoEnviar": "Send quote request",
+    "orcamento.sucesso": "Success!",
+    "orcamento.mensagemSucesso": "Quote sent as per the image. Our team will contact you shortly.",
+    "orcamento.erro": "Error!",
+    "orcamento.mensagemErro": "Error sending the quote. Please try again.",
 
     "footer.texto": "© 2026 Florestal Pinus - Fast service for quotations."
   }
@@ -389,3 +396,193 @@ window.addEventListener("load", () => {
     document.querySelector(".en-label")?.classList.toggle("ativo", idiomaSalvo === "en");
   }
 });
+
+
+// Função para criar e exibir modal de sucesso
+function criarModalSucesso(idioma) {
+  // Remove modal anterior se existir
+  const modalAnterior = document.getElementById('modalSucesso');
+  if (modalAnterior) {
+    modalAnterior.parentElement.remove();
+  }
+
+  // Cria overlay
+  const overlay = document.createElement('div');
+  overlay.style.position = 'fixed';
+  overlay.style.top = '0';
+  overlay.style.left = '0';
+  overlay.style.width = '100%';
+  overlay.style.height = '100%';
+  overlay.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+  overlay.style.display = 'flex';
+  overlay.style.justifyContent = 'center';
+  overlay.style.alignItems = 'center';
+  overlay.style.zIndex = '9999';
+
+  // Cria modal
+  const modal = document.createElement('div');
+  modal.id = 'modalSucesso';
+  modal.style.backgroundColor = 'white';
+  modal.style.borderRadius = '8px';
+  modal.style.padding = '40px 30px';
+  modal.style.textAlign = 'center';
+  modal.style.maxWidth = '400px';
+  modal.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.15)';
+  modal.style.animation = 'slideIn 0.3s ease-out';
+
+  // Ícone de checkmark
+  const icone = document.createElement('div');
+  icone.innerHTML = '✓';
+  icone.style.fontSize = '60px';
+  icone.style.color = '#4CAF50';
+  icone.style.marginBottom = '20px';
+  icone.style.fontWeight = 'bold';
+  icone.style.width = '80px';
+  icone.style.height = '80px';
+  icone.style.borderRadius = '50%';
+  icone.style.border = '3px solid #4CAF50';
+  icone.style.display = 'flex';
+  icone.style.alignItems = 'center';
+  icone.style.justifyContent = 'center';
+  icone.style.margin = '0 auto 20px';
+
+  // Título
+  const titulo = document.createElement('h2');
+  titulo.textContent = traducoes[idioma]['orcamento.sucesso'];
+  titulo.style.fontSize = '28px';
+  titulo.style.color = '#333';
+  titulo.style.marginBottom = '10px';
+  titulo.style.fontWeight = '600';
+
+  // Mensagem
+  const mensagem = document.createElement('p');
+  mensagem.textContent = traducoes[idioma]['orcamento.mensagemSucesso'];
+  mensagem.style.fontSize = '16px';
+  mensagem.style.color = '#666';
+  mensagem.style.marginBottom = '30px';
+  mensagem.style.lineHeight = '1.5';
+
+  // Botão OK
+  const botao = document.createElement('button');
+  botao.textContent = 'OK';
+  botao.style.backgroundColor = '#4CAF50';
+  botao.style.color = 'white';
+  botao.style.border = 'none';
+  botao.style.padding = '12px 40px';
+  botao.style.fontSize = '16px';
+  botao.style.borderRadius = '4px';
+  botao.style.cursor = 'pointer';
+  botao.style.fontWeight = '600';
+  botao.style.transition = 'background-color 0.3s';
+
+  botao.addEventListener('mouseover', () => {
+    botao.style.backgroundColor = '#45a049';
+  });
+
+  botao.addEventListener('mouseout', () => {
+    botao.style.backgroundColor = '#4CAF50';
+  });
+
+  botao.addEventListener('click', () => {
+    overlay.remove();
+  });
+
+  // Monta a estrutura
+  modal.appendChild(icone);
+  modal.appendChild(titulo);
+  modal.appendChild(mensagem);
+  modal.appendChild(botao);
+  overlay.appendChild(modal);
+
+  // Adiciona ao documento
+  document.body.appendChild(overlay);
+
+  // Fechar ao clicar no overlay
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) {
+      overlay.remove();
+    }
+  });
+}
+
+// Submissão do formulário de orçamento
+window.addEventListener("load", () => {
+  const formOrcamento = document.getElementById('formOrcamento');
+  if (formOrcamento) {
+    formOrcamento.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      
+      const formData = new FormData(formOrcamento);
+      const idioma = localStorage.getItem('idioma') || 'en';
+      
+      try {
+        const response = await fetch('processar_orcamento.php', {
+          method: 'POST',
+          body: formData
+        });
+        
+        const data = await response.json();
+        
+        if (data.status === 'success') {
+          // Exibe modal de sucesso
+          criarModalSucesso(idioma);
+          formOrcamento.reset();
+        } else {
+          const feedback = document.getElementById('feedback');
+          feedback.style.display = 'block';
+          feedback.style.backgroundColor = '#f8d7da';
+          feedback.style.color = '#721c24';
+          feedback.style.border = '1px solid #f5c6cb';
+          
+          const titulo = document.createElement('div');
+          titulo.textContent = traducoes[idioma]['orcamento.erro'];
+          titulo.style.fontSize = '20px';
+          titulo.style.marginBottom = '10px';
+          
+          const mensagem = document.createElement('div');
+          mensagem.textContent = data.message || traducoes[idioma]['orcamento.mensagemErro'];
+          mensagem.style.fontSize = '14px';
+          
+          feedback.innerHTML = '';
+          feedback.appendChild(titulo);
+          feedback.appendChild(mensagem);
+        }
+      } catch (error) {
+        const feedback = document.getElementById('feedback');
+        feedback.style.display = 'block';
+        feedback.style.backgroundColor = '#f8d7da';
+        feedback.style.color = '#721c24';
+        feedback.style.border = '1px solid #f5c6cb';
+        
+        const titulo = document.createElement('div');
+        titulo.textContent = traducoes[idioma]['orcamento.erro'];
+        titulo.style.fontSize = '20px';
+        titulo.style.marginBottom = '10px';
+        
+        const mensagem = document.createElement('div');
+        mensagem.textContent = traducoes[idioma]['orcamento.mensagemErro'];
+        mensagem.style.fontSize = '14px';
+        
+        feedback.innerHTML = '';
+        feedback.appendChild(titulo);
+        feedback.appendChild(mensagem);
+      }
+    });
+  }
+});
+
+// Adiciona animação de slide-in ao CSS
+const style = document.createElement('style');
+style.textContent = `
+  @keyframes slideIn {
+    from {
+      opacity: 0;
+      transform: translateY(-30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+`;
+document.head.appendChild(style);

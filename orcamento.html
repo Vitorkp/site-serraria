@@ -16,17 +16,19 @@
 
 <header>
 
-  <div class="logo-text">Florestal Pinus <span>Sul Brasil</span></div>
+  <div class="logo">
+    Florestal <span>Pinus</span>
+  </div>
 
   <nav>
 
     <a href="index.html" data-i18n="nav.inicio">Home  </a>
-    <a href="produtos.html" data-i18n="nav.produtos">Products</a>
+    <a href="produtos.php" data-i18n="nav.produtos">Products</a>
   </nav>
 
 <div class="header-actions">
 
-  <a href="login.html" class="login-topo" data-i18n="nav.login">
+<a href="login.php" class="login-topo" data-i18n="nav.login">
     Login
   </a>
 
@@ -72,7 +74,7 @@
       Fill in the information below and our team will contact you
     </p>
 
-    <form class="formulario">
+    <form class="formulario" id="formOrcamento">
       <label for="nome" data-i18n="orcamento.nomeLabel">
         Full name
       </label>
@@ -80,6 +82,7 @@
       <input
         type="text"
         id="nome"
+        name="nome"
         data-i18n-placeholder="orcamento.nomePlaceholder"
         placeholder="Enter your name"
         required
@@ -92,6 +95,7 @@
       <input
         type="tel"
         id="telefone"
+        name="telefone"
         placeholder="(00) 00000-0000"
         required
       >
@@ -103,6 +107,7 @@
       <input
         type="email"
         id="email"
+        name="email"
         data-i18n-placeholder="orcamento.emailPlaceholder"
         placeholder="your@email.com"
       >
@@ -111,22 +116,10 @@
         Desired product
       </label>
 
-      <select id="produto" required>
+      <select id="produto" name="produto" required>
 
         <option value="" data-i18n="orcamento.produtoSelecionar">
           Select a product
-        </option>
-
-        <option value="pinus" data-i18n="orcamento.produtoPinus">
-          Pine Wood
-        </option>
-
-        <option value="pallets" data-i18n="orcamento.produtoPallets">
-          Pallets
-        </option>
-
-        <option value="cavaco" data-i18n="orcamento.produtoCavaco">
-          Wood Chips
         </option>
 
       </select>
@@ -138,6 +131,7 @@
       <input
         type="text"
         id="quantidade"
+        name="quantidade"
         data-i18n-placeholder="orcamento.quantidadePlaceholder"
         placeholder="Example: 50 units, 10m³, 2 tons"
       >
@@ -149,6 +143,7 @@
       <input
         type="text"
         id="cidade"
+        name="cidade"
         data-i18n-placeholder="orcamento.cidadePlaceholder"
         placeholder="Enter your city"
       >
@@ -159,6 +154,7 @@
 
       <textarea
         id="mensagem"
+        name="mensagem"
         rows="5"
         data-i18n-placeholder="orcamento.observacoesPlaceholder"
         placeholder="Describe your request details"
@@ -167,6 +163,7 @@
       <button type="submit" data-i18n="orcamento.botaoEnviar">
         Send quote request
       </button>
+      <div id="feedback" style="display:none; margin-top: 20px; padding: 15px; border-radius: 8px; text-align: center; font-weight: bold;"></div>
     </form>
   </section>
 </main>
@@ -178,6 +175,55 @@
 </footer>
 
 <script src="script.js"></script>
+<script>
+// Carrega produtos do banco de dados no select
+async function carregarProdutosSelect() {
+  const idioma = localStorage.getItem('idioma') || 'en';
+  
+  try {
+    const response = await fetch(`api_produtos.php?idioma=${idioma}`);
+    const data = await response.json();
+    
+    if (data.status === 'success') {
+      const select = document.getElementById('produto');
+      
+      // Limpa opções anteriores mantendo a primeira
+      while (select.options.length > 1) {
+        select.remove(1);
+      }
+      
+      // Adiciona produtos do banco
+      data.produtos.forEach((produto) => {
+        const option = document.createElement('option');
+        option.value = produto.nome;
+        option.textContent = produto.nome;
+        select.appendChild(option);
+      });
+      
+      // Se há parâmetro de produto na URL, seleciona
+      const params = new URLSearchParams(window.location.search);
+      const produtoParam = params.get('produto');
+      if (produtoParam) {
+        select.value = produtoParam;
+      }
+    }
+  } catch (error) {
+    console.error('Erro ao carregar produtos:', error);
+  }
+}
+
+// Carrega produtos ao iniciar a página
+window.addEventListener('load', () => {
+  carregarProdutosSelect();
+});
+
+// Recarrega produtos quando o idioma muda
+const originalMudarIdioma = window.mudarIdioma;
+window.mudarIdioma = function(idioma) {
+  originalMudarIdioma(idioma);
+  carregarProdutosSelect();
+};
+</script>
 
 </body>
 </html>
