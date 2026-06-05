@@ -1227,6 +1227,11 @@ footer {
     transition: transform 0.7s ease;
     display: block;
 }
+.produto-img.cerca-img img {
+    object-position: center 35%;
+    height: 470px;
+}
+
 
 /* Hover elegante */
 .produto-novo:hover .produto-img img {
