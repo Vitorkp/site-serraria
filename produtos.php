@@ -142,26 +142,30 @@ async function carregarProdutos() {
       const grid = document.getElementById('produtosGrid');
       grid.innerHTML = '';
       
-      data.produtos.forEach((produto, index) => {
-        const badgeKey = produto.mercado === 'Exportação' ? 'produtos.cerca.badge' : 'produtos.cavaco.badge';
-        const badgeText = produto.mercado;
-        
-        const card = document.createElement('div');
-        card.className = 'produto-novo card-hover reveal';
-        card.innerHTML = `
-          <div class="produto-img">
-            <img src="${produto.foto}" alt="${produto.nome}">
-          </div>
-          <span class="badge">${badgeText}</span>
-          <h3>${produto.nome}</h3>
-          <div class="produto-descricao">${formatarDescricao(produto.descricao)}</div>
-          <div style="margin-top: 15px;">
-            <a href="orcamento.html?produto=${encodeURIComponent(produto.nome)}" class="btn-acao" style="background: var(--verde); color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; display: inline-block;">
-              ${idioma === 'pt' ? 'Solicitar orçamento' : 'Request quote'}
-            </a>
-          </div>
-        `;
-        grid.appendChild(card);
+        data.produtos.forEach((produto, index) => {
+          // Tradução das etiquetas de mercado
+          let badgeText = produto.mercado;
+          if (idioma === 'en') {
+            if (produto.mercado === 'Exportação') badgeText = 'Export';
+            if (produto.mercado === 'Mercado Interno') badgeText = 'Domestic Market';
+          }
+	        
+	        const card = document.createElement('div');
+	        card.className = 'produto-novo card-hover reveal';
+	        card.innerHTML = `
+	          <div class="produto-img">
+	            <img src="${produto.foto}" alt="${produto.nome}" class="expandir-img" style="cursor: zoom-in;">
+	          </div>
+	          <span class="badge">${badgeText}</span>
+	          <h3>${produto.nome}</h3>
+	          <div class="produto-descricao">${formatarDescricao(produto.descricao)}</div>
+	          <div style="margin-top: 15px;">
+	            <a href="orcamento.html?produto=${encodeURIComponent(produto.nome)}" class="btn-acao" style="background: var(--verde); color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; display: inline-block;">
+	              ${idioma === 'pt' ? 'Solicitar orçamento' : 'Request quote'}
+	            </a>
+	          </div>
+	        `;
+	        grid.appendChild(card);
         // Garante que o elemento seja revelado se já estiver na tela
         setTimeout(() => card.classList.add('ativo'), 100);
       });
@@ -192,13 +196,75 @@ window.addEventListener('load', () => {
   carregarProdutos();
 });
 
-// Recarrega produtos quando o idioma muda
-const originalMudarIdioma = window.mudarIdioma;
-window.mudarIdioma = function(idioma) {
-  originalMudarIdioma(idioma);
-  carregarProdutos();
-};
-</script>
+	// Recarrega produtos quando o idioma muda
+	const originalMudarIdioma = window.mudarIdioma;
+	window.mudarIdioma = function(idioma) {
+	  originalMudarIdioma(idioma);
+	  carregarProdutos();
+	};
+
+  /* 
+     TRECHO PARA EXPANDIR IMAGEM (LIGHTBOX)
+     Para remover esta funcionalidade, basta apagar ou comentar este bloco abaixo.
+  */
+  document.addEventListener('click', function(e) {
+    if (e.target.classList.contains('expandir-img')) {
+      const src = e.target.src;
+      
+      // Cria o overlay do lightbox
+      const lightbox = document.createElement('div');
+      lightbox.id = 'lightbox-overlay';
+      lightbox.style.position = 'fixed';
+      lightbox.style.top = '0';
+      lightbox.style.left = '0';
+      lightbox.style.width = '100%';
+      lightbox.style.height = '100%';
+      lightbox.style.backgroundColor = 'rgba(0, 0, 0, 0.85)';
+      lightbox.style.display = 'flex';
+      lightbox.style.justifyContent = 'center';
+      lightbox.style.alignItems = 'center';
+      lightbox.style.zIndex = '10000';
+      lightbox.style.cursor = 'zoom-out';
+      
+      // Cria a imagem expandida
+      const img = document.createElement('img');
+      img.src = src;
+      img.style.maxWidth = '90%';
+      img.style.maxHeight = '90%';
+      img.style.borderRadius = '8px';
+      img.style.boxShadow = '0 0 20px rgba(0,0,0,0.5)';
+      img.style.transition = 'transform 0.3s ease';
+      
+      // Botão de fechar
+      const fechar = document.createElement('div');
+      fechar.innerHTML = '&times;';
+      fechar.style.position = 'absolute';
+      fechar.style.top = '20px';
+      fechar.style.right = '30px';
+      fechar.style.color = 'white';
+      fechar.style.fontSize = '40px';
+      fechar.style.cursor = 'pointer';
+      fechar.style.fontWeight = 'bold';
+      
+      lightbox.appendChild(img);
+      lightbox.appendChild(fechar);
+      document.body.appendChild(lightbox);
+      
+      // Bloqueia o scroll do corpo
+      document.body.style.overflow = 'hidden';
+      
+      // Fecha ao clicar
+      const fecharLightbox = () => {
+        document.body.removeChild(lightbox);
+        document.body.style.overflow = 'auto';
+      };
+      
+      lightbox.addEventListener('click', fecharLightbox);
+      fechar.addEventListener('click', fecharLightbox);
+    }
+  });
+  /* FIM DO TRECHO DE EXPANDIR IMAGEM */
+	</script>
 
 </body>
 </html>

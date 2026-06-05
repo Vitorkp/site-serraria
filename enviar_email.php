@@ -1,60 +1,67 @@
 <?php
+/**
+ * Arquivo: enviar_email.php
+ * Certifique-se de que a pasta 'phpmailer/' está no mesmo diretório deste arquivo.
+ */
+
 require_once 'config.php';
 
-// 1. IMPORTA OS NAMESPACES (Obrigatório, deixa no topo do arquivo)
+// 1. IMPORTA OS NAMESPACES
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-// 2. CARREGA OS ARQUIVOS MANUALMENTE (Já que não usa Composer)
+// 2. CARREGA OS ARQUIVOS MANUALMENTE
 require 'phpmailer/Exception.php';
 require 'phpmailer/PHPMailer.php';
 require 'phpmailer/SMTP.php';
 
 /**
- * Função para enviar e-mail do orçamento usando SMTP Autenticado
+ * Função para enviar e-mail do orçamento usando SMTP Autenticado da KingHost
  */
 function enviarEmailOrcamento($nome, $telefone, $email, $produto, $quantidade, $cidade, $mensagem) {
     global $pdo;
     
     try {
-        // Busca o e-mail configurado no admin
+        // 3. BUSCA O E-MAIL DESTINATÁRIO NO BANCO DE DADOS
         $stmt = $pdo->query("SELECT valor FROM configuracoes WHERE chave = 'email_orcamentos' LIMIT 1");
         $config = $stmt->fetch();
         
         if (!$config || empty($config['valor'])) {
-            return false; 
+            throw new Exception("Configuração 'email_orcamentos' não foi encontrada na tabela 'configuracoes'.");
         }
         
         $emailDestino = $config['valor'];
         
-        // Higienização dos dados
-        $nome = htmlspecialchars($nome);
-        $telefone = htmlspecialchars($telefone);
-        $emailCliente = htmlspecialchars($email);
-        $produto = htmlspecialchars($produto);
-        $quantidade = htmlspecialchars($quantidade);
-        $cidade = htmlspecialchars($cidade);
+        // 4. HIGIENIZAÇÃO DOS DADOS
+        $nome          = htmlspecialchars(trim($nome));
+        $telefone      = htmlspecialchars(trim($telefone));
+        $emailCliente  = filter_var(trim($email), FILTER_VALIDATE_EMAIL) ? trim($email) : '';
+        $produto       = htmlspecialchars(trim($produto));
+        $quantidade    = htmlspecialchars(trim($quantidade));
+        $cidade        = htmlspecialchars(trim($cidade));
         
-        // Instancia o PHPMailer
+        // 5. CONFIGURAÇÃO DO PHPMAILER (Padrão KingHost homologado no teste)
         $mail = new PHPMailer(true);
         
-        // --- CONFIGURAÇÕES DO SERVIDOR SMTP DA KINGHOST ---
         $mail->isSMTP();
-        $mail->Host       = 'smtp.florestalpinus.com';        // Confirme se é este o host no painel da KingHost
-        $mail->SMTPAuth   = true;                             
-        $mail->Username   = 'noreply@florestalpinus.com';     // Seu e-mail completo
-        $mail->Password   = 'SUA_SENHA_AQUI';                 // A senha REAL deste e-mail
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;   // TLS ativo
-        $mail->Port       = 587;                              // Porta padrão 587
+        $mail->Host       = 'smtp.kinghost.net';        
+        $mail->SMTPAuth   = true;                               
+        $mail->Username   = 'orcamento@florestalpinus.com';     
+        $mail->Password   = 'Emailadmin123!';                 
+        $mail->SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS;   
+        $mail->Port       = 587;                              
         $mail->CharSet    = 'UTF-8';
         
-        // --- REMETENTE E DESTINATÁRIO ---
-        $mail->setFrom('noreply@florestalpinus.com', 'Florestal Pinus');
+        // 6. REMETENTE E DESTINATÁRIO
+        $mail->setFrom('orcamento@florestalpinus.com', 'Florestal Pinus');
         $mail->addAddress($emailDestino);                     
-        $mail->addReplyTo($emailCliente, $nome);              
         
-        // --- CONTEÚDO DO E-MAIL ---
+        if (!empty($emailCliente)) {
+            $mail->addReplyTo($emailCliente, $nome);              
+        }
+        
+        // 7. CONTEÚDO DO E-MAIL
         $mail->isHTML(true);
         $mail->Subject = 'Novo Orçamento - Florestal Pinus';
         
@@ -62,13 +69,15 @@ function enviarEmailOrcamento($nome, $telefone, $email, $produto, $quantidade, $
         <html>
         <head>
             <style>
-                body { font-family: Arial, sans-serif; color: #333; }
-                .container { max-width: 600px; margin: 0 auto; padding: 20px; background: #f5f5f5; }
-                .header { background: #24412D; color: white; padding: 20px; border-radius: 5px 5px 0 0; text-align: center; }
-                .content { background: white; padding: 20px; }
+                body { font-family: Arial, sans-serif; color: #333; line-height: 1.6; }
+                .container { max-width: 600px; margin: 0 auto; padding: 20px; background: #f5f5f5; border-radius: 8px; }
+                .header { background: #24412D; color: white; padding: 25px; border-radius: 5px 5px 0 0; text-align: center; }
+                .header h1 { margin: 0; font-size: 22px; }
+                .content { background: white; padding: 25px; border-radius: 0 0 5px 5px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
                 .field { margin-bottom: 15px; border-bottom: 1px solid #eee; padding-bottom: 10px; }
-                .label { font-weight: bold; color: #24412D; }
-                .footer { background: #f0f0f0; padding: 15px; text-align: center; font-size: 12px; color: #666; border-radius: 0 0 5px 5px; }
+                .label { font-weight: bold; color: #24412D; display: inline-block; width: 150px; }
+                .message-box { background: #f9f9f9; padding: 15px; border-left: 4px solid #24412D; margin-top: 5px; border-radius: 4px; }
+                .footer { text-align: center; font-size: 11px; color: #777; margin-top: 20px; }
             </style>
         </head>
         <body>
@@ -84,7 +93,7 @@ function enviarEmailOrcamento($nome, $telefone, $email, $produto, $quantidade, $
                         <span class='label'>Telefone/WhatsApp:</span> {$telefone}
                     </div>
                     <div class='field'>
-                        <span class='label'>E-mail:</span> {$emailCliente}
+                        <span class='label'>E-mail do Cliente:</span> " . ($emailCliente ?: 'Não informado') . "
                     </div>
                     <div class='field'>
                         <span class='label'>Produto:</span> {$produto}
@@ -95,13 +104,13 @@ function enviarEmailOrcamento($nome, $telefone, $email, $produto, $quantidade, $
                     <div class='field'>
                         <span class='label'>Cidade:</span> {$cidade}
                     </div>
-                    <div class='field'>
+                    <div class='field' style='border-bottom: none;'>
                         <span class='label'>Mensagem/Observações:</span>
-                        <p>" . nl2br(htmlspecialchars($mensagem)) . "</p>
+                        <div class='message-box'>" . nl2br(htmlspecialchars($mensagem)) . "</div>
                     </div>
                 </div>
                 <div class='footer'>
-                    <p>Este é um e-mail automático do sistema Florestal Pinus. Por favor, não responda.</p>
+                    <p>Este é um e-mail automático gerado pelo sistema Florestal Pinus. Por favor, não responda diretamente a este remetente.</p>
                 </div>
             </div>
         </body>
@@ -112,9 +121,8 @@ function enviarEmailOrcamento($nome, $telefone, $email, $produto, $quantidade, $
         return true;
         
     } catch (Exception $e) {
-        // Se der erro, descomente a linha abaixo para ver o que o servidor da Kinghost respondeu:
-        // echo "Erro no envio: {$mail->ErrorInfo}";
-        return false;
+        // Em vez de dar echo, repassa o erro para o processador tratar no JSON
+        throw new Exception("Erro no envio do e-mail: " . $mail->ErrorInfo);
     }
 }
 ?>
