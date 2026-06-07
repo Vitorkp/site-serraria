@@ -107,7 +107,7 @@ const traducoes = {
       "Produção Sustentável de Pinus para o Mercado Nacional e Internacional",
 
     "sobre.descricao1":
-      "Desde 1995, a Florestal Pinus atua na produção e no processamento de produtos de madeira de pinus de alta qualidade, atendendo clientes do mercado nacional e internacional com eficiência, confiabilidade e excelência.",
+      "Desde 1995, a Florestal Pinus Sul Brasil atua na produção e no processamento de produtos de madeira de pinus de alta qualidade, atendendo clientes do mercado nacional e internacional com eficiência, confiabilidade e excelência.",
 
     "sobre.descricao2":
       "Nossas operações utilizam madeira proveniente de florestas renováveis, garantindo uma cadeia produtiva responsável que respeita os recursos naturais e promove a sustentabilidade ambiental a longo prazo.",
@@ -197,7 +197,7 @@ const traducoes = {
     "orcamento.erro": "Erro!",
     "orcamento.mensagemErro": "Erro ao enviar o orçamento. Tente novamente.",
 
-    "footer.texto": "© 2026 Florestal Pinus - Atendimento rápido para orçamentos."
+    "footer.texto": "© 2026 Florestal Pinus Sul Brasil - Atendimento rápido para orçamentos."
   },
 
 
@@ -262,7 +262,7 @@ const traducoes = {
       "Sustainable Pine Production for Domestic and International Markets",
 
     "sobre.descricao1":
-      "Since 1995, Florestal Pinus has specialized in the production and processing of high-quality pine wood products, serving both domestic and international markets with reliability, efficiency, and consistent quality.",
+      "Since 1995, Florestal Pinus Sul Brasil has specialized in the production and processing of high-quality pine wood products, serving both domestic and international markets with reliability, efficiency, and consistent quality.",
 
     "sobre.descricao2":
       "Our operations are supported by timber sourced from renewable forests, ensuring a responsible supply chain that respects natural resources and promotes long-term environmental sustainability.",
@@ -352,7 +352,7 @@ const traducoes = {
     "orcamento.erro": "Error!",
     "orcamento.mensagemErro": "Error sending the quote. Please try again.",
 
-    "footer.texto": "© 2026 Florestal Pinus - Fast service for quotations."
+    "footer.texto": "© 2026 Florestal Pinus Sul Brasil - Fast service for quotations."
   }
 };
 
