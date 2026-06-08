@@ -1245,7 +1245,7 @@ footer {
 .logo-container {
   display: flex;
   align-items: center; 
-  gap: 25px;           /* Espaço entre o logo e o título */
+  gap: 25px;           
 }
 
 .header-logo {
@@ -1330,4 +1330,207 @@ footer {
     padding: 12px 18px;
     border-radius: 12px;
     font-weight: 600;
+}
+
+/*  test responsividade TABLET */
+
+@media (max-width: 1024px) {
+
+    .hero {
+        flex-direction: column;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .hero-card {
+        width: 100%;
+        max-width: 500px;
+        margin: 0 auto;
+    }
+
+    .sobre-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .sobre-imagem img {
+        max-height: 350px;
+    }
+
+    .vantagens-container {
+        grid-template-columns: 1fr;
+    }
+
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* test responsividade CELULAR */
+
+@media (max-width: 768px) {
+
+    header {
+        padding: 15px 20px;
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+
+    .header-actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .hero {
+        padding: 60px 20px;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .hero-texto h1 {
+        font-size: 2rem;
+        line-height: 1.2;
+    }
+
+    .hero-texto p {
+        font-size: 1rem;
+    }
+
+    .botoes {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .btn {
+        width: 100%;
+    }
+
+    .hero-card {
+        width: 100%;
+    }
+
+    .cards {
+        display: grid;
+        grid-template-columns: 1fr;
+    }
+
+    .card {
+        width: 100%;
+    }
+
+    .titulo {
+        font-size: 2rem;
+    }
+
+    .subtitulo {
+        font-size: 1rem;
+    }
+
+    .sobre-home {
+        padding: 60px 20px;
+    }
+
+    .sobre-grid {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sobre-texto h2 {
+        font-size: 2rem;
+        text-align: center;
+    }
+
+    .sobre-texto p {
+        text-align: center;
+    }
+
+    .sobre-destaques {
+        justify-content: center;
+    }
+
+    .sobre-imagem img {
+        width: 100%;
+        max-height: 250px;
+        object-fit: cover;
+    }
+
+    .sobre-home-card {
+        width: 100%;
+    }
+
+    .vantagens-container {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .vantagem {
+        width: 100%;
+    }
+
+    footer {
+        text-align: center;
+        padding: 25px 20px;
+    }
+
+    .whatsapp-btn {
+        width: 55px;
+        height: 55px;
+        right: 15px;
+        bottom: 15px;
+    }
+}
+
+
+/* test celulares menores */
+
+@media (max-width: 480px) {
+
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    .hero-texto h1 {
+        font-size: 1.7rem;
+    }
+
+    .hero-card h2 {
+        font-size: 1.3rem;
+    }
+
+    .titulo {
+        font-size: 1.8rem;
+    }
+
+    .sobre-texto h2 {
+        font-size: 1.7rem;
+    }
+
+    .produto-card {
+        padding: 15px;
+    }
+
+    .produto-img {
+        height: 200px;
+    }
+
+    .orcamento-container,
+    .form-container,
+    .formulario {
+        width: 100%;
+        padding: 20px;
+    }
+
+    input,
+    select,
+    textarea {
+        width: 100%;
+    }
 }
