@@ -78,7 +78,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 </head>
 <body>
     <header>
-        <div class="logo">Florestal <span>Pinus</span></div>
+        <div class="logo-container">
+            <img src="logo-florestal.png" alt="Logo" class="header-logo">
+            <div class="logo-text">Florestal Pinus <span>Sul Brasil</span></div>
+        </div>
         <nav><a href="index.html">Voltar ao Site</a></nav>
     </header>
 
