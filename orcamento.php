@@ -14,53 +14,7 @@
 
 <body>
 
-<header>
-
-  <div class="logo">
-    Florestal <span>Pinus</span>
-  </div>
-
-  <nav>
-
-    <a href="index.html" data-i18n="nav.inicio">Home  </a>
-    <a href="produtos.php" data-i18n="nav.produtos">Products</a>
-  </nav>
-
-<div class="header-actions">
-
-<a href="login.php" class="login-topo" data-i18n="nav.login">
-    Login
-  </a>
-
-  <div class="toggle-container">
-
-    <span class="toggle-label pt-label ativo">
-      PT
-    </span>
-
-    <label class="switch">
-
-      <input
-        type="checkbox"
-        id="lang-checkbox"
-        onchange="alternarSwitch(this)"
-      >
-
-      <div class="slider">
-        <div class="knob"></div>
-      </div>
-
-    </label>
-
-    <span class="toggle-label en-label">
-      EN
-    </span>
-
-  </div>
-
-</div>
-
-</header>
+<?php include 'includes/header.php'; ?>
 
 <main>
 
@@ -168,11 +122,7 @@
   </section>
 </main>
 
-<footer>
-  <p data-i18n="footer.texto">
-    &copy; 2026 Florestal Pinus - Fast service for quotations.
-  </p>
-</footer>
+<?php include 'includes/footer.php'; ?>
 
 <script src="script.js"></script>
 <script>
