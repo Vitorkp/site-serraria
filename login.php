@@ -93,10 +93,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <?php endif; ?>
             <form action="login.php" method="POST" class="formulario">
                 <label for="email">E-mail</label>
-                <input type="email" name="email" id="email" required placeholder="admin@florestalpinus.com">
+                <input type="email" name="email" id="email" required>
                 
                 <label for="senha">Senha</label>
-                <input type="password" name="senha" id="senha" required placeholder="******">
+                <input type="password" name="senha" id="senha" required>
                 
                 <button type="submit">Entrar</button>
             </form>
