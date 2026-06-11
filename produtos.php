@@ -118,7 +118,7 @@ async function carregarProdutos() {
 	          <h3>${produto.nome}</h3>
 	          <div class="produto-descricao">${formatarDescricao(produto.descricao)}</div>
 	          <div style="margin-top: 15px;">
-	            <a href="orcamento.html?produto=${encodeURIComponent(produto.nome)}" class="btn-acao" style="background: var(--verde); color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; display: inline-block;">
+	            <a href="orcamento.php?produto=${encodeURIComponent(produto.nome)}" class="btn-acao" style="background: var(--verde); color: white; padding: 8px 15px; border-radius: 4px; text-decoration: none; display: inline-block;">
 	              ${idioma === 'pt' ? 'Solicitar orçamento' : 'Request quote'}
 	            </a>
 	          </div>
