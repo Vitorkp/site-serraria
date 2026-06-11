@@ -12,7 +12,7 @@
 
   <div class="header-actions">
     <a href="login.php" class="login-topo" data-i18n="nav.login">
-      Conecte-se
+      Administração
     </a>
 
     <div class="toggle-container">
