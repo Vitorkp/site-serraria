@@ -53,7 +53,7 @@ const traducoes = {
     "nav.inicio": "Início",
     "nav.produtos": "Produtos",
     "nav.orcamento": "Orçamento",
-    "nav.login": "Conecte-se",
+    "nav.login": "Administração",
 
     "hero.titulo": "Madeira de qualidade para construção e indústria",
     "hero.descricao":
@@ -205,7 +205,7 @@ const traducoes = {
     "nav.inicio": "Home",
     "nav.produtos": "Products",
     "nav.orcamento": "Quote",
-    "nav.login": "Login",
+    "nav.login": "Administration",
 
     "hero.titulo":
       "Quality wood for construction and industry",
