@@ -351,6 +351,7 @@ section:nth-child(odd) {
   object-fit: cover;
   border-radius: 12px;
   margin-bottom: 18px;
+  object-position: center top;
 }
 
 .card .icone {

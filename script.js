@@ -73,9 +73,9 @@ const traducoes = {
     "produtos.subtitulo":
       "Soluções em madeira para diferentes necessidades",
 
-    "produtos.pinus.titulo": "Madeira de Pinus",
+    "produtos.pinus.titulo": "Cerca de Pinus",
     "produtos.pinus.descricao":
-      "Madeira resistente para construção, marcenaria e uso industrial.",
+      "Cercas de pinus resistentes e duráveis para aplicações residenciais, rurais e comerciais.",
 
     "produtos.pallets.titulo": "Pallets",
     "produtos.pallets.descricao":
@@ -228,9 +228,9 @@ const traducoes = {
     "produtos.subtitulo":
       "Wood solutions for different needs",
 
-    "produtos.pinus.titulo": "Pine Wood",
+    "produtos.pinus.titulo": "Pine Fences",
     "produtos.pinus.descricao":
-      "Durable wood for construction, carpentry and industrial use.",
+      "Pine fences that are strong and durable for residential, rural, and commercial applications.",
 
     "produtos.pallets.titulo": "Pallets",
     "produtos.pallets.descricao":
