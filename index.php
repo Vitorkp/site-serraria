@@ -26,7 +26,7 @@
         <a href="produtos.php" class="btn btn-verde" data-i18n="hero.botaoProdutos">
           View products
         </a>
-        <a href="orcamento.html" class="btn btn-marrom" data-i18n="hero.botaoOrcamento">
+        <a href="orcamento.php" class="btn btn-marrom" data-i18n="hero.botaoOrcamento">
           Request a quote
         </a>
       </div>
