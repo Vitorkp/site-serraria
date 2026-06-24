@@ -1,6 +1,6 @@
 # 🌲 Site Florestal Pinus
 
-Projeto de desenvolvimento de um site institucional e funcional para uma serraria, com foco em solicitação de produtos e orçamentos.
+Projeto de desenvolvimento de um site institucional e funcional para uma serraria, com foco em visibilidade internacional e facilidade em solicitação de produtos e orçamentos.
 
 ---
 
@@ -9,11 +9,12 @@ Projeto de desenvolvimento de um site institucional e funcional para uma serrari
 Este projeto tem como objetivo criar um site para uma empresa de serraria que trabalha com:
 
 - Casca de Pinus
-- Pellets
+- Pallets
 - Cavaco
 - Serragem
+- Cerca de Pinus
 
-O sistema permitirá que clientes visualizem produtos, adicionem ao carrinho e solicitem orçamento.
+O sistema permitirá que clientes visualizem sobre a empresa, visualizem produtos, especificações e solicitem orçamentos via integração com botão de whatsapp ou pela página de orçamentos
 
 ---
 
@@ -89,10 +90,27 @@ página inicial ( Footer )
 página de orçamento
 <img width="1238" height="912" alt="image" src="https://github.com/user-attachments/assets/a0ec0035-bf77-4776-aec7-d839b1d34a33" />
 
-
-
 ---
 
 ## 💡 Observação
 
 Este projeto está sendo desenvolvido para uma aplicação real para uma empresa.
+
+---
+
+## Fotos do Site finalizado e entregue ao cliente
+
+-página inicial ( Header )
+<img width="1903" height="697" alt="image" src="https://github.com/user-attachments/assets/c21a9840-930f-4fd0-a5af-5b38cdf7dd44" />
+
+página inicial ( Footer )
+<img width="1904" height="750" alt="image" src="https://github.com/user-attachments/assets/c1b941e2-60b4-4cce-bd6d-4e96b846c0b5" />
+
+
+página de produtos
+<img width="1900" height="940" alt="image" src="https://github.com/user-attachments/assets/3b7aaf94-1377-4b9d-873e-325ae4a1dcb7" />
+
+página de orçamento
+<img width="1904" height="946" alt="image" src="https://github.com/user-attachments/assets/dcb9f030-936b-4c72-864a-b8490e3fe132" />
+
+
